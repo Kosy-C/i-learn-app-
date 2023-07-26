@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, request } from "express";
+import { Request, Response, NextFunction } from "express";
 import { UserAttributes, UserInstance } from "../model/userModel";
 import { AvailabilityInstance } from "../model/availabilityModel";
 import jwt, { JwtPayload } from "jsonwebtoken";
@@ -319,7 +319,7 @@ const resetPasswordGet = async (req: Request, res: Response) => {
 const resetPasswordPost = async (req: Request, res: Response) => {
   const { id, token } = req.params;
   const { password } = req.body;
-  console.log(req.body);
+  //console.log(req.body);
 
   const validateResult = resetPasswordSchema.validate(req.body, option);
   if (validateResult.error) {
